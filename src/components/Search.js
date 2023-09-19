@@ -1,14 +1,22 @@
 import React from "react";
 
-function Search() {
+function Search( { setFilter } ) {
+
+
+function filterSearch(e) {
+  return setFilter(e.target.value)
+  console.log(setFilter)
+}
+
+
   return (
     <div className="searchbar">
       <label htmlFor="search">Search Plants:</label>
       <input
         type="text"
         id="search"
-        placeholder="Type a name to search..."
-        onChange={(e) => console.log("Searching...")}
+        placeholder="Type a name to search plants..."
+        onChange={filterSearch}
       />
     </div>
   );

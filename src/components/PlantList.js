@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList() {
+
+
+function PlantList( { getFilter, getPlant, setPlant } ) {
+
+  const filteredPlants = getPlant.filter((plant) => {
+    if (plant.name.toLowerCase().includes(getFilter.toLowerCase())) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+
+  const plants = filteredPlants.map((plant) => {
+    return <PlantCard 
+      key={plant.image}
+      name={plant.name}
+      image={plant.image}
+      price={plant.price}
+    />
+  })
+
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">{plants}</ul>
   );
 }
 
