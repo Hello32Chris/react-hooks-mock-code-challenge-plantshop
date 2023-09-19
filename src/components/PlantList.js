@@ -12,6 +12,7 @@ function PlantList( { getFilter, getPlant, setPlant } ) {
       return false;
     }
   })
+  
 
   const plants = filteredPlants.map((plant) => {
     return <PlantCard 

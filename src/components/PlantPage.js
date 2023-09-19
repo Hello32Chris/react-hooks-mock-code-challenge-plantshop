@@ -8,7 +8,7 @@ function PlantPage( { getPlant, setPlant } ) {
 
 
   const [getFilter, setFilter] = useState("")
-
+  console.log(getFilter)
 
   return (
     <main>

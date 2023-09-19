@@ -7,7 +7,8 @@ function PlantCard( { name, image, price } ) {
   function changeButton() {
     return setSoldout(!getSoldout)
   }
-  
+
+   
 
 
   return (
@@ -16,7 +17,12 @@ function PlantCard( { name, image, price } ) {
       <h4>{name}</h4>
       <p>Price: ${price}</p>
 
-      <button className="primary" onClick={changeButton}>{getSoldout ? "In Stock": "Out of Stock"}</button>
+      {/* <button className="primary" onClick={changeButton}>{getSoldout ? "In Stock": "Out of Stock"}</button> */}
+      {getSoldout ? (  
+        <button className="primary" onClick={changeButton}>In Stock</button>
+      ) : (
+      <button className="secondary" onClick={changeButton}>Out of Stock</button>
+    )}
     </li>
   );
 }

@@ -16,11 +16,12 @@ h2 {
   margin-bottom: 1rem;
 }
 
-button {
+button.secondary {
   padding: 0.25rem 1rem;
   font-family: inherit;
   border: none;
   cursor: pointer;
+  background-color: red;
 }
 
 button.primary {
